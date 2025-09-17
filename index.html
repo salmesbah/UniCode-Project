@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">Kiish</title>
+    <link rel="icon" type="image/jpeg" href="./Logo.jpg" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="head">Kiish</h1>
+    </div>
+    <!--language-->
+    <div>
+      <button id="langBtn">عربي</button>
+    </div>
+    <!--login-->
+    <div id="loginSection">
+      <input type="text" id="username" placeholder="Enter your username" />
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <div id="welcome" style="margin: 10px 0"></div>
+
+    <!--send money-->
+    <div id="sendSection" style="display: none">
+      <!--account balance-->
+      <div id="balance">Balance: 100 KD</div>
+      <input
+        type="text"
+        id="recevier"
+        placeholder="Enter recevier's username"
+      />
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <button id="send">Kiish</button>
+    </div>
+
+    <div id="message"></div>
+    <div id="history"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
