@@ -1,0 +1,96 @@
+rl("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+body {
+  display: flexbox;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  align-items: center;
+  background-color: #f8f8f8;
+  color: #1b2a4e;
+}
+
+#headerDiv {
+  margin: 20px;
+}
+#headerDiv h1 {
+  color: #1b2a4e;
+  font-size: 32px;
+  text-align: center;
+}
+
+#header {
+  background: fixed;
+  background-color: #8814dc;
+}
+
+#welcome {
+  text-align: center;
+  color: #8814dc;
+  font-weight: bold;
+}
+
+button {
+  background-color: #ff7b00;
+  color: #1b2a4e;
+  font-weight: 20px;
+  border: none;
+  padding: 10px 20px;
+  margin: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+  border: 30px;
+  box-shadow: 0 2px 8px #1b2a4e;
+}
+input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  width: 250px;
+  margin: 8px 0;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+#loginSecton {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #8814dc;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+  width: 300px;
+  text-align: center;
+  margin: 50px auto;
+}
+#sendSection {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #8814dc;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+  width: 300px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+#balance {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1b2a4e;
+}
+input,
+button {
+  font-size: 16px;
+  padding: 12px;
+}
