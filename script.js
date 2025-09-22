@@ -87,10 +87,10 @@ sendBtn.addEventListener("click", function () {
     lang === "en"
       ? `You sent ${amount} KD to ${recevier}`
       : `لقد ارسلت ${amount} د.ك إلى ${recevier}`;
-  const h3 = document.createElement("h3");
+
+    const h3 = document.createElement("h3");
   h3.textContent = 
     lang === "en" ? 'Last Transactions:' : 'آخر المعاملات:'
-  historyDiv.appendChild(h3);
   
   const p = document.createElement("p");
   p.textContent =
@@ -102,4 +102,5 @@ sendBtn.addEventListener("click", function () {
   reciverInput.value = "";
   amountInput.value = "";
 });
+
 
