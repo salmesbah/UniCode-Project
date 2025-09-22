@@ -88,9 +88,6 @@ sendBtn.addEventListener("click", function () {
       ? `You sent ${amount} KD to ${recevier}`
       : `لقد ارسلت ${amount} د.ك إلى ${recevier}`;
 
-const h3 = document.createElement("h3");
-  h3.textContent = 
-    lang === "en" ? 'Last Transactions:' : 'آخر المعاملات:'
   const p = document.createElement("p");
   p.textContent =
     lang === "en"
@@ -101,6 +98,7 @@ const h3 = document.createElement("h3");
   reciverInput.value = "";
   amountInput.value = "";
 });
+
 
 
 
