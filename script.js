@@ -10,6 +10,7 @@ const balacneDiv = document.getElementById("balance");
 const reciverInput = document.getElementById("recevier");
 const amountInput = document.getElementById("amount");
 const sendBtn = document.getElementById("send");
+const container = document.getElementById("rainContainer");
 const messageDiv = document.getElementById("message");
 const historyDiv = document.getElementById("history");
 
@@ -52,7 +53,7 @@ langBtn.addEventListener("click", function () {
 loginBtn.addEventListener("click", function () {
   const user = usernameIput.value.trim();
   if (!user) {
-    welcomeDiv.textContent = lang === "en" ? "Enter a username" : "ادخل اسمك";
+    alert(lang === "en" ? "Enter a username" : "ادخل اسمك");
     return;
   }
   welcomeDiv.textContent =
@@ -60,21 +61,40 @@ loginBtn.addEventListener("click", function () {
   loginSection.style.display = "none";
   sendSection.style.display = "block";
 });
+//MAKE IT RAIN!!!
+function makeItRain() {
+  const logoCount = 50;
+  for (let i = 0; i < logoCount; i++) {
+    const logo = document.createElement("img");
+    logo.src = "./Logo2.png";
+    logo.classList.add("logo");
+    logo.style.left =
+      (i / logoCount) * window.innerWidth + Math.random() * 50 + "px";
+    logo.style.animationDuration = 2 + Math.random() * 2 + "s";
+    container.appendChild(logo);
+
+    logo.addEventListener("animationend", () => logo.remove());
+  }
+}
+sendBtn.addEventListener("click", () => {
+  makeItRain();
+});
 //send money
 sendBtn.addEventListener("click", function () {
   const recevier = reciverInput.value;
   const amount = parseFloat(amountInput.value);
+  messageDiv.style.display = "block";
   if (!recevier || !amount) {
-    messageDiv.textContent =
+    alert(
       lang === "en"
-        ? "Please enter both username and amount."
-        : "الرجاء إدخال اسم المستلم و المبلغ.";
+        ? "Please enter both username and amount!"
+        : "الرجاء إدخال اسم المستلم و المبلغ!"
+    );
     return;
   }
   //balacne not enough
   if (amount > balance) {
-    messageDiv.textContent =
-      lang === "en" ? "Not enough balance." : "الرصيد غير كافي.";
+    alert(lang === "en" ? "Not enough balance." : "الرصيد غير كافي.");
     return;
   }
 
@@ -88,17 +108,17 @@ sendBtn.addEventListener("click", function () {
       ? `You sent ${amount} KD to ${recevier}`
       : `لقد ارسلت ${amount} د.ك إلى ${recevier}`;
 
+  const historyTitle = document.getElementById("historyTitle");
+  historyTitle.textContent =
+    lang === "en" ? "Last Transactions:" : ":آخر المعاملات";
+
   const p = document.createElement("p");
   p.textContent =
     lang === "en"
       ? `-${amount} KD to ${recevier}`
       : `-${amount} د.ك إلى ${recevier}`;
-  historyDiv.appendChild(p);
+  historyDiv.insertBefore(p, historyTitle.nextSibling);
 
   reciverInput.value = "";
   amountInput.value = "";
 });
-
-
-
-
